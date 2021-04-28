@@ -27,7 +27,6 @@ class ContactList extends Component {
                 contact={contact}
                 index={index}
                 onDeleteContact={this.props.onDeleteContact}
-                // onEditContact={this.props.onEditContact}
               />
             )
           })

@@ -52,14 +52,15 @@ const Contact = ({ contact, index, onDeleteContact, onEditContact }) => {
             Delete
             </Button>
           <Button
-              variant="contained"
-              color="primary"
+            variant="contained"
+            color="primary"
             type='button'
             onClick={() => toggleModal(contact.id)}
-            >
-            Edit
-            </Button>
-          {modal && <Modal toggleModal={toggleModal}>
+          >
+          Edit
+          </Button>
+          {modal &&
+          <Modal toggleModal={toggleModal}>
             <EditContactForm toggleModal={toggleModal} contactId={currentId}/>
           </Modal>}
           </CardActions>

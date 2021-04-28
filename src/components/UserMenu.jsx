@@ -11,19 +11,19 @@ const UserMenu = (props) => {
                 variant="h6"
                 color="inherit"
                 noWrap>
-              Welcome, {props.userName}
-            </Typography>
-            <NavLink className='navLink' to='/login'>
+                Welcome, {props.userName}
+              </Typography>
+              <NavLink className='navLink' to='/login'>
               <Button
                 variant="contained"
                 color="primary"
-          noWrap
-          type='button'
+                noWrap
+                type='button'
                 onClick={props.logOut}
               >
               Logout
-            </Button>
-            </NavLink>
+              </Button>
+              </NavLink>
     </Toolbar>
   )
 }
