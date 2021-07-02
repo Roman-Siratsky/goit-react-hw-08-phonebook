@@ -14,27 +14,28 @@ class ContactList extends Component {
     name: '',
     number: '+38',
   }
+  
   componentDidMount() {
     this.props.fetchContacts()
   }
 
   render() {
-      return (
-          this.props.contacts.length
-          ? this.props.contacts.map((contact, index) => {
-            return (
-              <Contact
-                contact={contact}
-                index={index}
-                onDeleteContact={this.props.onDeleteContact}
-              />
-            )
-          })
-          : <li className='no_contacts' key={shortId.generate()}>
-              <Typography align='center' variant='h3'>No saved contacts yet</Typography>
-            </li>
+    return (
+      this.props.contacts.length
+        ? this.props.contacts.map((contact, index) => {
+          return (
+            <Contact
+              contact={contact}
+              index={index}
+              onDeleteContact={this.props.onDeleteContact}
+            />
+          )
+        })
+        : <li className='no_contacts' key={shortId.generate()}>
+          <Typography align='center' variant='h3'>No saved contacts yet</Typography>
+        </li>
     )
-    }
+  }
 }
 
 

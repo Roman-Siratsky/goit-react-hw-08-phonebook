@@ -33,7 +33,7 @@ const middleware = [
         },
     }),
     logger,
-    ]
+]
 
 const store = configureStore({
     reducer: rootReducer,

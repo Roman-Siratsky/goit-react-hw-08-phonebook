@@ -24,59 +24,59 @@ const Register = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.registerUser({name, email, password})
+        props.registerUser({ name, email, password })
         setName('')
         setEmail('')
         setPassword('')
     }
     return (
-      <div className='register-container'>
-          <form className='register-form'>
-            <div className='register-item'>
-                <TextField
-                    name='name'
-                    label="Name"
-                    variant="outlined"
-                    value={name}
-                    type='text'
-                    onChange={handleNameChange}
-                />
-            </div>
-            <div className='register-item'>
-                <TextField
-                    label="Email"
-                    name='email'
-                    variant="outlined"
-                    type='email'
-                    value={email}
+        <div className='register-container'>
+            <form className='register-form'>
+                <div className='register-item'>
+                    <TextField
+                        name='name'
+                        label="Name"
+                        variant="outlined"
+                        value={name}
+                        type='text'
+                        onChange={handleNameChange}
+                    />
+                </div>
+                <div className='register-item'>
+                    <TextField
+                        label="Email"
+                        name='email'
+                        variant="outlined"
+                        type='email'
+                        value={email}
                         onChange={handleEmailChange}
                         autoComplete='off'
-                />
-          </div>
-          <div className='register-item'>
-                <TextField
-                    label="Password"
-                    name='password'
-                    variant="outlined"
-                    type='password'
-                    value={password}
+                    />
+                </div>
+                <div className='register-item'>
+                    <TextField
+                        label="Password"
+                        name='password'
+                        variant="outlined"
+                        type='password'
+                        value={password}
                         onChange={handlePasswordChange}
                         autoComplete='off'
-                />
-            </div>
-            <div className='register-item'>
-                <Button
-                    variant="contained"
-                    color="primary"
+                    />
+                </div>
+                <div className='register-item'>
+                    <Button
+                        variant="contained"
+                        color="primary"
                         type='submit'
                         onClick={handleSubmit}
-                >
-                Зарегистрироваться
-                </Button>
-            </div>
-        </form>
-    </div>
-  )
+                    >
+                        Зарегистрироваться
+                    </Button>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 

@@ -19,33 +19,33 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
   const classes = useStyles()
-    return (
-        <>
-        <CssBaseline />
-        <AppBar className={classes.appBar} position="relative"> 
-          <Toolbar>
-            <ContactsIcon />
-            <NavLink className='navLink' to='/'>
-              <Typography
-                variant="h6"
-                color="inherit"
-                noWrap>
+  return (
+    <>
+      <CssBaseline />
+      <AppBar className={classes.appBar} position="relative">
+        <Toolbar>
+          <ContactsIcon />
+          <NavLink className='navLink' to='/'>
+            <Typography
+              variant="h6"
+              color="inherit"
+              noWrap>
               Home
             </Typography>
-            </NavLink>
-            {props.isLoggedIn && <NavLink className='navLink' to='/contacts'>
-              <Typography
-                variant="h6"
-                color="inherit"
-                noWrap>
+          </NavLink>
+          {props.isLoggedIn && <NavLink className='navLink' to='/contacts'>
+            <Typography
+              variant="h6"
+              color="inherit"
+              noWrap>
               PhoneBook
             </Typography>
-            </NavLink>}
-          </Toolbar>
-          {props.isLoggedIn ? <UserMenu userName={props.userName}/> : <AuthMenu/>}
-          </AppBar>
-        </>
-    )
+          </NavLink>}
+        </Toolbar>
+        {props.isLoggedIn ? <UserMenu userName={props.userName} /> : <AuthMenu />}
+      </AppBar>
+    </>
+  )
 }
 
 const mapStateToProps = (state) => ({

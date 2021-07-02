@@ -20,40 +20,41 @@ class App extends Component {
   }
   render() {
     return (
-    <>
+      <>
         <Header />
         <div className='whole_app'>
           <Switch>
-          <PublicRoute
-            exact path='/'
-            component={Home}
-          />
-          <PrivateRoute
-            path='/contacts'
-            component={Contacts}
-            redirectTo='/login'
-          />
-          <PublicRoute
-            path='/register'
-            component={Register}
-            restricted
-            redirectTo='/contacts'
-          />
-          <PublicRoute
-            path='/login'
-            component={Login}
-            restricted
-            redirectTo='contacts'
-          />
-        </Switch>
+            <PublicRoute
+              exact path='/'
+              component={Home}
+            />
+            <PrivateRoute
+              path='/contacts'
+              component={Contacts}
+              redirectTo='/login'
+            />
+            <PublicRoute
+              path='/register'
+              component={Register}
+              restricted
+              redirectTo='/contacts'
+            />
+            <PublicRoute
+              path='/login'
+              component={Login}
+              restricted
+              redirectTo='contacts'
+            />
+          </Switch>
         </div>
       </>
-  )
+    )
   }
-} 
+}
 
 
 const mapDispatchToProps = (dispatch) => ({
   onGetCurrentUser: () => dispatch(getCurrentUser())
 })
+
 export default connect(null, mapDispatchToProps)(App);

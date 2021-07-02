@@ -25,8 +25,8 @@ const Filter = (props) => {
       variant="outlined"
       autoComplete='off'
       onChange={props.handleFilterChange}
-      />
-    )
+    />
+  )
 }
 
 const mapStateToProps = (state) => ({

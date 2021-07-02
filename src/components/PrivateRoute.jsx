@@ -11,12 +11,13 @@ const PrivateRoute = ({
 }) => (
   <Route
     {...routeProps}
-    render={props => 
-      isLoggedIn ? <Component {...props}/> : <Redirect to={redirectTo}/>
+    render={props =>
+      isLoggedIn ? <Component {...props} /> : <Redirect to={redirectTo} />
     }
   />
 )
 const mapStateToProps = state => ({
     isLoggedIn: getIsAuthorized(state)
 })
+
 export default connect(mapStateToProps)(PrivateRoute);

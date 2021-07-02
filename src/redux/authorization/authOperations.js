@@ -25,7 +25,7 @@ export const register = credentials => async dispatch => {
         const { data } = await axios.post('users/signup', credentials)
         token.setToken(data.token)
         dispatch(registerSuccess(data))
-    } catch(error) {
+    } catch (error) {
         dispatch(registerError(error.message))
     }
 }
@@ -35,9 +35,9 @@ export const login = credentials => async dispatch => {
         const { data } = await axios.post('users/login', credentials)
         token.setToken(data.token)
         dispatch(loginSuccess(data))
-    } catch(error) {
+    } catch (error) {
         dispatch(loginError(error.message))
-    }  
+    }
 }
 export const logOut = () => async dispatch => {
     dispatch(logOutRequest())
@@ -45,13 +45,13 @@ export const logOut = () => async dispatch => {
         await axios.post('users/logout')
         token.unSetToken()
         dispatch(logOutSuccess())
-    } catch(error) {
+    } catch (error) {
         dispatch(logOutError(error.message))
-    }  
+    }
 }
 export const getCurrentUser = () => async (dispatch, getState) => {
     const {
-        authorization: {token: persistedToken},
+        authorization: { token: persistedToken },
     } = getState()
 
     if (!persistedToken) {
@@ -62,7 +62,7 @@ export const getCurrentUser = () => async (dispatch, getState) => {
     try {
         const { data } = await axios.get('users/current')
         dispatch(getCurrentUserSuccess(data))
-    } catch(error) {
+    } catch (error) {
         dispatch(getCurrentUserError(error.message))
     }
 }

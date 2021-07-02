@@ -19,46 +19,46 @@ const Login = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.loginUser({email, password})
+        props.loginUser({ email, password })
         setEmail('')
         setPassword('')
     }
     return (
-      <div className='register-container'>
-          <form className='register-form'>
-            <div className='register-item'>
-                <TextField
-                    label="Email"
-                    name='email'
-                    variant="outlined"
-                    type='email'
-                    value={email}
-                    onChange={handleEmailChange}
-                />
-          </div>
-          <div className='register-item'>
-                <TextField
-                    label="Password"
-                    name='password'
-                    variant="outlined"
-                    type='password'
-                    value={password}
-                    onChange={handlePasswordChange}
-                />
-            </div>
-            <div className='register-item'>
-                <Button
-                    variant="contained"
-                    color="primary"
+        <div className='register-container'>
+            <form className='register-form'>
+                <div className='register-item'>
+                    <TextField
+                        label="Email"
+                        name='email'
+                        variant="outlined"
+                        type='email'
+                        value={email}
+                        onChange={handleEmailChange}
+                    />
+                </div>
+                <div className='register-item'>
+                    <TextField
+                        label="Password"
+                        name='password'
+                        variant="outlined"
+                        type='password'
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
+                </div>
+                <div className='register-item'>
+                    <Button
+                        variant="contained"
+                        color="primary"
                         type='submit'
                         onClick={handleSubmit}
-                >
-                Войти
-                </Button>
-            </div>
-        </form>
-    </div>
-  )
+                    >
+                        Войти
+                    </Button>
+                </div>
+            </form>
+        </div>
+    )
 }
 const mapDispatchToProps = (dispatch) => ({
     loginUser: (data) => dispatch(login(data))

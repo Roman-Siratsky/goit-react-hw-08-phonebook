@@ -15,11 +15,11 @@ class Modal extends Component {
     }
 
     onEscape = (e) => {
-            if (e.code === 'Escape') {
-                this.props.toggleModal()
-                console.log(e.code);
-            }
-    } 
+        if (e.code === 'Escape') {
+            this.props.toggleModal()
+            console.log(e.code);
+        }
+    }
 
     onOverlayClick = (e) => {
         if (e.currentTarget === e.target) {

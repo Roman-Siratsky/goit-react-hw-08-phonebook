@@ -7,26 +7,27 @@ import { NavLink } from 'react-router-dom'
 const UserMenu = (props) => {
   return (
     <Toolbar>
-              <Typography
-                variant="h6"
-                color="inherit"
-                noWrap>
-                Welcome, {props.userName}
-              </Typography>
-              <NavLink className='navLink' to='/login'>
-              <Button
-                variant="contained"
-                color="primary"
-                noWrap
-                type='button'
-                onClick={props.logOut}
-              >
-              Logout
-              </Button>
-              </NavLink>
+      <Typography
+        variant="h6"
+        color="inherit"
+        noWrap>
+        Welcome, {props.userName}
+      </Typography>
+      <NavLink className='navLink' to='/login'>
+        <Button
+          variant="contained"
+          color="primary"
+          noWrap
+          type='button'
+          onClick={props.logOut}
+        >
+          Logout
+        </Button>
+      </NavLink>
     </Toolbar>
   )
 }
+
 const mapDispatchToProps = dispatch => ({
   logOut: () => dispatch(logOut())
 }) 

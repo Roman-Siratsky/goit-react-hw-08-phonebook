@@ -33,39 +33,39 @@ const Contact = ({ contact, index, onDeleteContact, onEditContact }) => {
     }).join('')
   }
   return (
-          <li className='contact-item' key={contact.id}>
-        <Card className={classes.card}>
-          <CardMedia>
-            <PhoneIcon/>
-          </CardMedia>
+    <li className='contact-item' key={contact.id}>
+      <Card className={classes.card}>
+        <CardMedia>
+          <PhoneIcon />
+        </CardMedia>
         <CardContent>
           <Typography align='center' variant='h6'>{contact.name.toUpperCase() + " : " + getTelephoneForm(contact.number)}
           </Typography>
         </CardContent>
-          <CardActions>
-            <Button
-              variant="contained"
-              color="primary"
-              type='button'
-              onClick={() => onDeleteContact(contact.id)}
-            >
+        <CardActions>
+          <Button
+            variant="contained"
+            color="primary"
+            type='button'
+            onClick={() => onDeleteContact(contact.id)}
+          >
             Delete
-            </Button>
+          </Button>
           <Button
             variant="contained"
             color="primary"
             type='button'
             onClick={() => toggleModal(contact.id)}
           >
-          Edit
+            Edit
           </Button>
           {modal &&
-          <Modal toggleModal={toggleModal}>
-            <EditContactForm toggleModal={toggleModal} contactId={currentId}/>
-          </Modal>}
-          </CardActions>
-            </Card>
-          </li>
+            <Modal toggleModal={toggleModal}>
+              <EditContactForm toggleModal={toggleModal} contactId={currentId} />
+            </Modal>}
+        </CardActions>
+      </Card>
+    </li>
   )
 }
 export default Contact
